@@ -5,20 +5,37 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches-ignore:
+      - 'master'
+      - 'release**'
 
 jobs:
-  build:
+  maven-build-deploy:
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,linux,x64,insights]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 17
-      uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        distribution: 'adopt'
         java-version: '17'
+        cache: 'maven'
+    - name: Build with Offline dependencies Maven
+      env:
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+
+      run: mvn -s .github/workflows/settings.xml --batch-mode dependency:go-offline
+
     - name: Build with Maven
-      run: mvn verify
+      env:
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+      run: mvn -s .github/workflows/settings.xml --batch-mode clean install
+
+    - name: Deploy with Maven
+      env:
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+      run: mvn -s .github/workflows/settings.xml -DskipTests deploy

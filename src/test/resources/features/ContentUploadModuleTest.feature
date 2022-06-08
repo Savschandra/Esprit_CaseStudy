@@ -1,4 +1,4 @@
-Feature: Coding Module -- These test cases verifies the frontend features on Horreum.
+Feature: Content Upload Module -- These test cases verifies the frontend features on Horreum.
 
   Background:
     Given Navigate to Horreum Test server

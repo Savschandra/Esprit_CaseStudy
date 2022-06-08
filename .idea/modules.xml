@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HorreumRegressionSuite.iml" filepath="$PROJECT_DIR$/HorreumRegressionSuite.iml" />
       <module fileurl="file://$PROJECT_DIR$/../horreum-webapp-qa-automation/PegasusFrameWork.iml" filepath="$PROJECT_DIR$/../horreum-webapp-qa-automation/PegasusFrameWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PegasusFrameWorkTest.iml" filepath="$PROJECT_DIR$/PegasusFrameWorkTest.iml" />
     </modules>
   </component>
 </project>

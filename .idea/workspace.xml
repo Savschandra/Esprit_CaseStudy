@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c654d4d-1b42-44bd-8e0f-2347299fb2f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HorreumRegressionSuite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PegasusFrameWorkTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/extent.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/extent.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +60,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ravi-muktavarapu/IdeaProjects/TestProject",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ravi-muktavarapu/IdeaProjects/ExecutionFrameworks/HorreumRegressionSuite&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../horreum-webapp-qa-automation" />
@@ -86,7 +90,7 @@
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/UserManagementModuleTest.feature" />
       <option name="GLUE" value="com.testproject.stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="HorreumRegressionSuite" />
+      <module name="PegasusFrameWorkTest" />
       <option name="NAME_FILTER" value="^003 \&gt;\&gt; User should be able to delete the created user$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^003 \&gt;\&gt; User should be able to delete the created user$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: 003 &gt;&gt; User should be able to delete the created user" />
@@ -106,7 +110,7 @@
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/CodingModuleTest.feature" />
       <option name="GLUE" value="com.testproject.stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="HorreumRegressionSuite" />
+      <module name="PegasusFrameWorkTest" />
       <option name="NAME_FILTER" value="^005 \&gt;\&gt; Print Articles Menu should not be available under Configuration in Coding Module\.$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^005 \&gt;\&gt; Print Articles Menu should not be available under Configuration in Coding Module\.$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: 005 &gt;&gt; Print Articles Menu should not be available under Configuration in Coding Module." />
@@ -126,7 +130,7 @@
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/CodingModuleTest.feature" />
       <option name="GLUE" value="com.testproject.stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="HorreumRegressionSuite" />
+      <module name="PegasusFrameWorkTest" />
       <option name="NAME_FILTER" value="^006 \&gt;\&gt; Error validation should be displayed when navigating to page beyond the pagination set\.$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^006 \&gt;\&gt; Error validation should be displayed when navigating to page beyond the pagination set\.$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: 006 &gt;&gt; Error validation should be displayed when navigating to page beyond the pagination set." />
@@ -146,7 +150,7 @@
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/CodingModuleTest.feature" />
       <option name="GLUE" value="com.testproject.stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="HorreumRegressionSuite" />
+      <module name="PegasusFrameWorkTest" />
       <option name="NAME_FILTER" value="^007 \&gt;\&gt; Highlighting of text under Articles should be done only after user enables Highlighting\.$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^007 \&gt;\&gt; Highlighting of text under Articles should be done only after user enables Highlighting\.$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: 007 &gt;&gt; Highlighting of text under Articles should be done only after user enables Highlighting." />
@@ -162,7 +166,7 @@
       </method>
     </configuration>
     <configuration name="HorreumRunnerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HorreumRegressionSuite" />
+      <module name="PegasusFrameWorkTest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.testproject.runners.*" />
@@ -212,7 +216,8 @@
       <workItem from="1654246745423" duration="5632000" />
       <workItem from="1654252684830" duration="541000" />
       <workItem from="1654253237970" duration="1899000" />
-      <workItem from="1654588659301" duration="2769000" />
+      <workItem from="1654588659301" duration="3847000" />
+      <workItem from="1654716980903" duration="25000" />
     </task>
     <servers />
   </component>

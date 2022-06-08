@@ -1,4 +1,4 @@
-Feature: Coding Module -- These test cases are created for Regression testing on Horreum Web app.
+Feature: User Management Module -- These test cases are created for Regression testing on Horreum Web app.
 
   /*Field  -- Modules
   Administration -- User Management

@@ -12,7 +12,7 @@ on:
 jobs:
   maven-build-deploy:
 
-    runs-on: [self-hosted,linux,x64,insights]
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2

@@ -21,21 +21,6 @@ jobs:
         distribution: 'adopt'
         java-version: '17'
         cache: 'maven'
-    - name: Build with Offline dependencies Maven
-      env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-
-      run: mvn -s .github/workflows/settings.xml --batch-mode dependency:go-offline
 
     - name: Build with Maven
-      env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-      run: mvn -s .github/workflows/settings.xml --batch-mode clean install
-
-    - name: Deploy with Maven
-      env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-      run: mvn -s .github/workflows/settings.xml -DskipTests deploy
+      run: mvn verify

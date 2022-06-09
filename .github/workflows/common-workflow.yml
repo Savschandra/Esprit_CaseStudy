@@ -8,8 +8,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
-    
   workflow_call:
     inputs:
       environment:
@@ -35,23 +33,24 @@ jobs:
     runs-on: cision-self-hosted
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Set up JDK 17
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: 'maven'
     - name: Cache local Maven repository
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
-        path: ~/.m2/repository
+        path: ~.m2/repository
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn -B clean verify
+      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
       
     - name: report artifact - cucumber report  
       if: always()

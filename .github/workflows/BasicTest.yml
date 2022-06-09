@@ -1,0 +1,28 @@
+name: Basic Test
+
+on: 
+  workflow_dispatch:
+    inputs:
+      env:
+        description: environment
+        type: choice
+        required: true
+        options: 
+        - local
+        - prod
+      browser:
+        description: browser
+        type: choice
+        required: true
+        options: 
+        - chrome-remote
+        - firefox-remote
+
+jobs:
+
+  Basic Test:
+    uses: ./.github/workflows/mavenBuildSuccessful.yml
+    with:
+#       tags: "${{ github.event.inputs.tags }}"
+      environment: "${{ github.event.inputs.env }}"
+      browser: "${{ github.event.inputs.browser }}"

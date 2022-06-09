@@ -6,9 +6,9 @@ on:
       environment:
         required: true
         type: string
-#       tags:
-#         required: true
-#         type: string
+      tags:
+        required: true
+        type: string
       browser: 
         required: true
         type: string

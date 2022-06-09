@@ -1,0 +1,28 @@
+2021-12-26 21:19:23 INFO  BasePage:382 - Setting up browser
+2021-12-26 21:19:23 INFO  BasePage:382 - Executing scenario: PEG-690 >> Configuring Horreum according to Restricted or Unrestricted Business Hours under Coding Module.
+2021-12-26 21:19:24 INFO  WebDriverManager:403 - Using chromedriver 96.0.4664.45 (resolved driver for Chrome 96)
+2021-12-26 21:19:24 INFO  WebDriverManager:393 - Exporting webdriver.chrome.driver as /home/ravi-muktavarapu/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver
+2021-12-26 21:19:26 INFO  HorreumMethods:382 - User navigated to Horreum in Restricted Business Hours
+2021-12-26 21:19:26 INFO  BasePage:382 - Setting up browser
+2021-12-26 21:19:26 INFO  BasePage:382 - Executing scenario: PEG-710 >> Successfully Add Broadcast to a station searched under TV Media Manager Module.
+2021-12-26 21:19:26 INFO  WebDriverManager:403 - Using chromedriver 96.0.4664.45 (resolved driver for Chrome 96)
+2021-12-26 21:19:26 INFO  WebDriverManager:393 - Exporting webdriver.chrome.driver as /home/ravi-muktavarapu/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver
+2021-12-26 21:19:32 INFO  BasePage:382 - Setting up browser
+2021-12-26 21:19:32 INFO  BasePage:382 - Executing scenario: PEG-735 >> Website URL and Login info text fields should be available for "Add Print Media" under PMM Module.
+2021-12-26 21:19:32 INFO  WebDriverManager:403 - Using chromedriver 96.0.4664.45 (resolved driver for Chrome 96)
+2021-12-26 21:19:32 INFO  WebDriverManager:393 - Exporting webdriver.chrome.driver as /home/ravi-muktavarapu/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver
+2021-12-26 21:19:34 INFO  HorreumMethods:382 - WebsiteURL is displayed
+2021-12-26 21:19:34 INFO  HorreumMethods:382 - LoginUser field is displayed
+2021-12-26 21:19:34 INFO  HorreumMethods:382 - LoginPassword field is displayed
+2021-12-26 21:19:34 INFO  BasePage:382 - Setting up browser
+2021-12-26 21:19:34 INFO  BasePage:382 - Executing scenario: PEG-680 >> Horreum should prevent push of LN Data to Newsletter Tool.
+2021-12-26 21:19:34 INFO  WebDriverManager:403 - Using chromedriver 96.0.4664.45 (resolved driver for Chrome 96)
+2021-12-26 21:19:34 INFO  WebDriverManager:393 - Exporting webdriver.chrome.driver as /home/ravi-muktavarapu/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver
+2021-12-26 21:20:02 INFO  HorreumMethods:382 - Upload Status has been failed because LN source provider can't be pushed to NLT
+2021-12-26 21:20:02 INFO  BasePage:382 - Setting up browser
+2021-12-26 21:20:02 INFO  BasePage:382 - Executing scenario: PEG-779 >> Media Search Functionality should be enhanced under Scope Manager.
+2021-12-26 21:20:02 INFO  WebDriverManager:403 - Using chromedriver 96.0.4664.45 (resolved driver for Chrome 96)
+2021-12-26 21:20:02 INFO  WebDriverManager:393 - Exporting webdriver.chrome.driver as /home/ravi-muktavarapu/.cache/selenium/chromedriver/linux64/96.0.4664.45/chromedriver
+2021-12-26 21:20:04 INFO  HorreumMethods:382 - Media Search Functionality is Enhanced
+2021-12-26 21:20:04 WARN  PDType1Font:161 - Using fallback font LiberationSans for base font Symbol
+2021-12-26 21:20:04 WARN  PDType1Font:161 - Using fallback font LiberationSans for base font ZapfDingbats

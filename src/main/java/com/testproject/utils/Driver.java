@@ -8,7 +8,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class Driver {
@@ -24,37 +28,65 @@ public class Driver {
      */
 
     public static WebDriver get() {
-        String browser = ConfigurationReader.getProperty("browser");
+        String gridUrl = ConfigurationReader.getProperty("gridUrl");
+        String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
         if (driverPool.get() == null) {
             switch (browser) {
-                case "chrome" -> {
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
-                }
-                case "chrome-headless" -> {
+                    break;
+                case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));
-                }
-                case "firefox" -> {
+                    driverPool.set(new ChromeDriver(new ChromeOptions().addArguments("headless").addArguments("window-size=1920,1440")));
+                    break;
+                case "chrome-remote":
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("headless");
+                    chromeOptions.setCapability("platform", "ANY");
+                    chromeOptions.addArguments("window-size=1920,1440");
+                    chromeOptions.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+                    try {
+                        driverPool.set(new RemoteWebDriver(new URL(gridUrl), chromeOptions));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Running REMOTE Chrome");
+                    break;
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
-                }
-                case "firefox-headless" -> {
+                    break;
+                case "firefox-headless":
                     WebDriverManager.firefoxdriver().setup();
-                    driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true)));
-                }
-                case "edge" -> {
+                    driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true).addArguments("-width=1920").addArguments("-height=1080")));
+                    break;
+                case "firefox-remote":
+                    FirefoxOptions ffOptions = new FirefoxOptions();
+                    ffOptions.addArguments("headless");
+                    ffOptions.setCapability("platform", "ANY");
+                    ffOptions.addArguments("window-size=1920,1440");
+                    try {
+                        driverPool.set(new RemoteWebDriver(new URL(gridUrl), ffOptions));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Running REMOTE Firefox");
+                    break;
+                case "edge":
                     WebDriverManager.edgedriver().setup();
                     driverPool.set(new EdgeDriver());
-                }
-                case "edge-headless" -> {
+                    break;
+                case "edge-headless":
                     WebDriverManager.edgedriver().setup();
-                    driverPool.set(new EdgeDriver(new EdgeOptions().setHeadless(true)));
-                }
-                case "safari" -> {
+                    driverPool.set(new EdgeDriver(new EdgeOptions().addArguments("headless").addArguments("window-size=1920,1440")));
+                    break;
+                case "safari":
                     WebDriverManager.safaridriver().setup();
                     driverPool.set(new SafariDriver());
-                }
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + browser);
             }
         }
         return driverPool.get();

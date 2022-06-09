@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Media Logos Module -- These test cases verifies the frontend features on Horreum.
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.709 s - in Media Logos Module -- These test cases verifies the frontend features on Horreum.

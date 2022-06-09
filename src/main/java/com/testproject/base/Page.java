@@ -15,6 +15,13 @@ public class Page {
     public Page() {
         PageFactory.initElements(Driver.get(), this);
     }
+    public void refreshPage() {
+        Driver.get().navigate().refresh();
+    }
+
+    public void navigateBack() {
+        Driver.get().navigate().back();
+    }
 
     /**
      * Wait till DOM is loaded

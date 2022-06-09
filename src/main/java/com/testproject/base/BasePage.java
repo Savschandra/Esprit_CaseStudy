@@ -16,9 +16,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 public abstract class BasePage <T extends BasePage<T>> extends Page {
@@ -94,6 +92,125 @@ public abstract class BasePage <T extends BasePage<T>> extends Page {
         path = "./target/screenshots/" + source.getName();
         FileUtils.copyFile(source, new File(path));
 
+    }
+
+    /*New methods for regular use*/
+    // ----------------------- WAITS -----------------------
+    public void waitForDialogFrameAndSwitch(int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("bnn-dialog-iframe"));
+    }
+
+    public void waitForTextToBePresentInElement(WebElement element, String text, int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    public void waitForVisibility(List<WebElement> elements, int timeToWaitSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(timeToWaitSec));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
+    public void waitForInVisibility(WebElement element, int timeToWaitSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(timeToWaitSec));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public void waitUntilElementsSizeIsMoreThanZero(List<WebElement> elements) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(40));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
+    public void waitUntilAlertIsPresent() {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public void waitUntilUrlContains(String text, int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.urlContains(text));
+    }
+
+    public void waitForAttributeToBe(WebElement el, String attribute, String value, int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.attributeToBe(el, attribute, value));
+    }
+
+    public void waitUntilPresenceOfNestedElement(int seconds, String option) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//option[.='"+ option +"']")));
+    }
+
+    public void waitForPageToLoad() {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(25));
+        wait.until(d -> ((JavascriptExecutor) Driver.get()).executeScript("return document.readyState").equals("complete"));
+    }
+
+    public void waitUntilTitleIs(String expectedTitle) {
+        WebDriverWait wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.titleIs(expectedTitle));
+    }
+
+    // ----------------------- ALERT -----------------------
+
+    public void handleAlert(String command) {
+        Alert alert = Driver.get().switchTo().alert();
+        switch (command) {
+            case "accept":
+                alert.accept();
+                break;
+            case "dismiss":
+                alert.dismiss();
+        }
+    }
+
+    public boolean isAlertPresent(String command) {
+        try {
+            handleAlert(command);
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    public String getAlertText() {
+        waitUntilAlertIsPresent();
+        Alert alert = Driver.get().switchTo().alert();
+        return alert.getText();
+    }
+
+    // ----------------------- OTHER -----------------------
+
+    public String getCurrentDateAndTime(String targetFormat) {
+        Date date = Calendar.getInstance().getTime();
+        DateFormat formatter = new SimpleDateFormat(targetFormat, Locale.US);
+        return formatter.format(date);
+    }
+
+    public String getYesterdayDate(String targetFormat) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date date = cal.getTime();
+        DateFormat formatter = new SimpleDateFormat(targetFormat, Locale.US);
+        return formatter.format(date);
+    }
+
+    // ---------------- SWITCHING WINDOWS/FRAMES -------------------
+
+    public void switchToFrame(String nameOrID) {
+        Driver.get().switchTo().frame(nameOrID);
+    }
+
+    public void switchToDialogFrame() {
+        Driver.get().switchTo().frame("bnn-dialog-iframe");
+    }
+
+    public void switchToParentFrame() {
+        Driver.get().switchTo().defaultContent();
+    }
+
+    public void switchToPFrame() {
+        Driver.get().switchTo().parentFrame();
     }
 
 }

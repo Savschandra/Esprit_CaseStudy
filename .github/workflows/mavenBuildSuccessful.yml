@@ -43,7 +43,7 @@ jobs:
           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DgridUrl=https://selenium-grid.app.cision.com/wd/hub -Dbrowser=${{ inputs.browser }}
+      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
       
     - name: report artifact - cucumber report  
       if: always()

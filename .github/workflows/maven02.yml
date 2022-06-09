@@ -19,10 +19,10 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           cache: 'maven'
-      - name: Set up virtual X11
-        run: sudo apt-get install xvfb
-      - name: Start virtual frame buffer
-        run: Xvfb :19 -screen 0 1024x768x16 &
+#       - name: Set up virtual X11
+#         run: sudo apt-get install xvfb
+#       - name: Start virtual frame buffer
+#         run: Xvfb :19 -screen 0 1024x768x16 &
 
       - name: Build with Offline dependencies Maven
         env:

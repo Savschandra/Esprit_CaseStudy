@@ -28,7 +28,7 @@ public class Driver {
      */
 
     public static WebDriver get() {
-        String gridUrl = ConfigurationReader.getProperty("gridUrl");
+        String horreumUrl = ConfigurationReader.getProperty("horreumUrl");
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
         if (driverPool.get() == null) {
             switch (browser) {
@@ -47,7 +47,7 @@ public class Driver {
                     chromeOptions.addArguments("window-size=1920,1440");
                     chromeOptions.addArguments("--no-sandbox", "--disable-dev-shm-usage");
                     try {
-                        driverPool.set(new RemoteWebDriver(new URL(gridUrl), chromeOptions));
+                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), chromeOptions));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
@@ -67,7 +67,7 @@ public class Driver {
                     ffOptions.setCapability("platform", "ANY");
                     ffOptions.addArguments("window-size=1920,1440");
                     try {
-                        driverPool.set(new RemoteWebDriver(new URL(gridUrl), ffOptions));
+                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }

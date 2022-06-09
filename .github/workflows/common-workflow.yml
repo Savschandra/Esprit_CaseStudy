@@ -42,13 +42,13 @@ jobs:
         distribution: 'temurin'
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
-    - name: Cache local Maven repository
-      uses: actions/cache@v3
-      with:
-        path: ~.m2/repository
-        key: ${{ runner.os }}-maven
-        restore-keys: |
-          ${{ runner.os }}-maven
+#     - name: Cache local Maven repository
+#       uses: actions/cache@v3
+#       with:
+#         path: ~.m2/repository
+#         key: ${{ runner.os }}-maven
+#         restore-keys: |
+#           ${{ runner.os }}-maven
           
     - name: Maven verify
       run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -Dbrowser=${{ inputs.browser }}

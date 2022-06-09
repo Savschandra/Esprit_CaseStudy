@@ -50,7 +50,7 @@ jobs:
           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
+      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -Dbrowser=${{ inputs.browser }}
       
     - name: report artifact - cucumber report  
       if: always()

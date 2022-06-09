@@ -30,4 +30,4 @@ jobs:
       env:
         ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
         ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-      run: mvn clean verify --file pom.xml "-Djava.awt.headless=true"
+      run: mvn clean verify -Pcodecoverage -B package "-Djava.awt.headless=true"

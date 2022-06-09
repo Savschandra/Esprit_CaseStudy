@@ -1,9 +1,0 @@
-com/testproject/stepDefs/HorreumStepDef.class
-com/testproject/utilities/APIUtils.class
-com/testproject/pages/HorreumElements.class
-com/testproject/runners/HorreumRunnerTest.class
-com/testproject/stepDefs/Hooks.class
-com/testproject/utilities/BrowserUtils.class
-com/testproject/pages/HorreumMethods.class
-com/testproject/utilities/DBUtils.class
-com/testproject/cucumber/ScenarioContext.class

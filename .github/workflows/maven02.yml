@@ -24,3 +24,6 @@ jobs:
     - name: Build with Maven
       #run: mvn -Pcodecoverage -B package "-Djava.awt.headless=true"
       run: mvn clean verify -Djava.awt.headless=true
+      env:
+        DISPLAY: :19
+        CUCUMBER_PUBLISH_TOKEN: 12345678-1234-1234-1234-123456789123

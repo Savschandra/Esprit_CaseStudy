@@ -1,4 +1,4 @@
-name: Cucumber framework execution
+name: Cucumber Framework execution
 
 on:
   workflow_call:
@@ -7,7 +7,7 @@ on:
         required: true
         type: string
       tags:
-        required: false
+        required: true
         type: string
       browser: 
         required: true
@@ -32,18 +32,19 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'adopt'
         cache: 'maven'
-    - name: Maven verify
-      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
-      
+    
     - name: Cache local Maven repository
       uses: actions/cache@v3
       with:
-        path: ~/.m2/repository
+        path: ~/home/ravi-muktavarapu/.m2/repository
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
+          
+    - name: Maven verify
+      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
             
     - name: report artifact - cucumber report  
       if: always()

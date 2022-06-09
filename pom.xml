@@ -94,16 +94,11 @@
 
         <!-- UI dependencies -->
 
-<!--         <dependency>
+         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-<<<<<<< HEAD
             <version>31.1-jre</version>
         </dependency>
-=======
-            <version>21.0</version>
-        </dependency> -->
->>>>>>> 5dc9fbc52c79301e574cd6cd1a7a9fa2e5725bb5
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

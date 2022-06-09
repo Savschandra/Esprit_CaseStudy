@@ -1,4 +1,4 @@
-name: reusable workflow for automated tests running
+name: Cucumber framework execution
 
 on:
   workflow_call:
@@ -23,7 +23,7 @@ on:
 
 jobs:
   run-automated-tests:
-    runs-on: cision-self-hosted
+    runs-on: [self-hosted,linux,x64,insights]
 
     steps:
     - uses: actions/checkout@v3

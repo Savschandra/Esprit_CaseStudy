@@ -20,14 +20,14 @@ jobs:
       with:
         java-version: '17'
         distribution: 'adopt'
-    - name: Set up virtual X11
-      run: sudo apt-get install xvfb
-    - name: Start virtual frame buffer
-      run: Xvfb :19 -screen 0 1024x768x16 &
+#     - name: Set up virtual X11
+#       run: sudo apt-get install xvfb
+#     - name: Start virtual frame buffer
+#       run: Xvfb :19 -screen 0 1024x768x16 &
  
     - name: Build with Maven
       #run: mvn -Pcodecoverage -B package "-Djava.awt.headless=true"
       env:
         ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
         ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-      run: mvn clean verify -Pcodecoverage -B package "-Djava.awt.headless=true"
+      run: mvn clean verify "-Djava.dtd.headless=true"

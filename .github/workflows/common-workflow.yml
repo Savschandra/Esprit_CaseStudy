@@ -42,8 +42,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - uses: browser-actions/setup-chrome@latest
-    - run: chrome --version
     - name: Cache local Maven repository
       uses: actions/cache@v2
       with:

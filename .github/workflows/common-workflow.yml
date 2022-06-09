@@ -1,6 +1,13 @@
-name: Cucumber Framework execution
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Regression Automation Test
 
 on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   workflow_call:
     inputs:
       environment:
@@ -23,7 +30,7 @@ on:
 
 jobs:
   run-automated-tests:
-    runs-on: cision-self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -32,20 +39,19 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'adopt'
+        distribution: 'temurin'
         cache: 'maven'
-    
     - name: Cache local Maven repository
       uses: actions/cache@v3
       with:
-        path: ~/home/ravi-muktavarapu/.m2/repository
+        path: ~.m2/repository
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
-            
+      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
+      
     - name: report artifact - cucumber report  
       if: always()
       uses: actions/upload-artifact@v2

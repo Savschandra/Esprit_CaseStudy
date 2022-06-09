@@ -28,7 +28,7 @@ public class Driver {
      */
 
     public static WebDriver get() {
-        String horreumUrl = ConfigurationReader.getProperty("horreumUrl");
+//        String horreumUrl = ConfigurationReader.getProperty("horreumUrl");
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
         if (driverPool.get() == null) {
             switch (browser) {
@@ -47,11 +47,11 @@ public class Driver {
                     chromeOptions.addArguments("window-size=1920,1440");
                     chromeOptions.addArguments("--disable-dev-shm-usage");
                     chromeOptions.addArguments("--no-sandbox");
-                    try {
-                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), chromeOptions));
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), chromeOptions));
+//                    } catch (MalformedURLException e) {
+//                        e.printStackTrace();
+//                    }
                     System.out.println("Running REMOTE Chrome");
                     break;
                 case "firefox":
@@ -67,11 +67,11 @@ public class Driver {
                     ffOptions.addArguments("headless");
                     ffOptions.setCapability("platform", "ANY");
                     ffOptions.addArguments("window-size=1920,1440");
-                    try {
-                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
+//                    } catch (MalformedURLException e) {
+//                        e.printStackTrace();
+//                    }
                     System.out.println("Running REMOTE Firefox");
                     break;
                 case "edge":

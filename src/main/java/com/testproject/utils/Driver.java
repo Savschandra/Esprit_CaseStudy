@@ -45,7 +45,8 @@ public class Driver {
                     chromeOptions.addArguments("headless");
                     chromeOptions.setCapability("platform", "ANY");
                     chromeOptions.addArguments("window-size=1920,1440");
-                    chromeOptions.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--no-sandbox");
                     try {
                         driverPool.set(new RemoteWebDriver(new URL(horreumUrl), chromeOptions));
                     } catch (MalformedURLException e) {

@@ -19,34 +19,34 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           cache: 'maven'
-#       - name: Set up virtual X11
-#         run: sudo apt-get install xvfb
-#       - name: Start virtual frame buffer
-#         run: Xvfb :19 -screen 0 1024x768x16 &
+      - name: Set up virtual X11
+        run: sudo apt-get install xvfb
+      - name: Start virtual frame buffer
+        run: Xvfb :19 -screen 0 1024x768x16 &
 
-      - name: Build with Offline dependencies Maven
-        env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+#       - name: Build with Offline dependencies Maven
+#         env:
+#           ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+#           ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
 
-        run: mvn -s .github/workflows/settings.xml --batch-mode dependency:go-offline
+#         run: mvn -s .github/workflows/settings.xml --batch-mode dependency:go-offline
 
-      - name: Build with Maven
-        env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-        run: mvn -s .github/workflows/settings.xml --batch-mode clean install
+#       - name: Build with Maven
+#         env:
+#           ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+#           ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+#         run: mvn -s .github/workflows/settings.xml --batch-mode clean install
 
-      - name: Deploy with Maven
-        env:
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
-        run: mvn -s .github/workflows/settings.xml -DskipTests deploy
+#       - name: Deploy with Maven
+#         env:
+#           ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+#           ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+#         run: mvn -s .github/workflows/settings.xml -DskipTests deploy
  
       - name: Build with Maven
-      #run: mvn --file pom.xml -Pcodecoverage -B package "-Djava.awt.headless=true"  
-        run: mvn --file pom.xml -Pcodecoverage -B package "-Djava.awt.headless=true"
         env:
-           DISPLAY: :19
-           CUCUMBER_PUBLISH_TOKEN: 12345678-1234-1234-1234-123456789123
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_APIKEY: ${{ secrets.ARTIFACTORY_APIKEY }}
+      #run: mvn --file pom.xml -Pcodecoverage -B package "-Djava.awt.headless=true"  
+        run: mvn --file pom.xml .github/workflows/settings.xml "-Djava.awt.headless=true"
 

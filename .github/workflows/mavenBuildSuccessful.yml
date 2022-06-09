@@ -7,7 +7,7 @@ on:
         required: true
         type: string
       tags:
-        required: true
+        required: false
         type: string
       browser: 
         required: true
@@ -23,7 +23,7 @@ on:
 
 jobs:
   run-automated-tests:
-    runs-on: [self-hosted,linux,x64,insights]
+    runs-on: cision-self-hosted
 
     steps:
     - uses: actions/checkout@v3
@@ -34,6 +34,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: 'maven'
+    - name: Maven verify
+      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
+      
     - name: Cache local Maven repository
       uses: actions/cache@v3
       with:
@@ -41,10 +44,7 @@ jobs:
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
-          
-    - name: Maven verify
-      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
-      
+            
     - name: report artifact - cucumber report  
       if: always()
       uses: actions/upload-artifact@v2

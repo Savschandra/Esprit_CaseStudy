@@ -30,7 +30,7 @@ on:
 
 jobs:
   run-automated-tests:
-    runs-on: cision-self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3

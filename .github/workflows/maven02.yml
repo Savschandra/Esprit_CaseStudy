@@ -2,25 +2,32 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven
-
+ 
 on:
   push:
-    branches : [master]
+    branches: [ master ]
   pull_request:
-    branches : [master]
-
+    branches: [ master ]
+ 
 jobs:
-  maven-build-deploy:
-
+  build:
+ 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-java@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
       with:
+        java-version: '11'
         distribution: 'adopt'
-        java-version: '17'
-        cache: 'maven'
-
+    - name: Set up virtual X11
+      run: sudo apt-get install xvfb
+    - name: Start virtual frame buffer
+      run: Xvfb :19 -screen 0 1024x768x16 &
+ 
     - name: Build with Maven
-      run: mvn clean verify -Djava.awt.headless=true
+      #run: mvn --file pom.xml -Pcodecoverage -B package "-Djava.awt.headless=true"  
+      run: mvn --file pom.xml -Pcodecoverage -B package 
+      env: 
+        DISPLAY: :19
+        CUCUMBER_PUBLISH_TOKEN: 12345678-1234-1234-1234-123456789123

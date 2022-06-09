@@ -7,14 +7,6 @@
     <list default="true" id="5c654d4d-1b42-44bd-8e0f-2347299fb2f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testproject/base/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testproject/base/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testproject/base/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testproject/base/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testproject/utils/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testproject/utils/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/testproject/stepDefs/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testproject/stepDefs/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/CodingModuleTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/CodingModuleTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ContentUploadModuleTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ContentUploadModuleTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/UserManagementModuleTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/UserManagementModuleTest.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +216,7 @@
       <workItem from="1654588659301" duration="3847000" />
       <workItem from="1654716980903" duration="25000" />
       <workItem from="1654717574279" duration="3879000" />
-      <workItem from="1654767322249" duration="2461000" />
+      <workItem from="1654767322249" duration="2963000" />
     </task>
     <servers />
   </component>

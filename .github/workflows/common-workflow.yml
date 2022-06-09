@@ -4,6 +4,10 @@
 name: Regression Automation Test
 
 on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   workflow_call:
     inputs:
       environment:

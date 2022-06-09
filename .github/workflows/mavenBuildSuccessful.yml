@@ -34,9 +34,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: 'maven'
-    - name: Maven verify
-      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
-      
+    
     - name: Cache local Maven repository
       uses: actions/cache@v3
       with:
@@ -44,6 +42,9 @@ jobs:
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
+          
+    - name: Maven verify
+      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
             
     - name: report artifact - cucumber report  
       if: always()

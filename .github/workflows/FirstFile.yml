@@ -14,10 +14,6 @@ on:
         options: 
         - local
         - prod
-      tags:
-        description: Tags
-        type: string
-        required: true
       browser:
         description: browser
         type: choice

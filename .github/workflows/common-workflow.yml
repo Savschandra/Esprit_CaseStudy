@@ -5,8 +5,7 @@ name: Regression Automation Test
 
 on:
   push:
-    branches:
-      - 'release**'
+    branches: [master]
   
   workflow_call:
     inputs:

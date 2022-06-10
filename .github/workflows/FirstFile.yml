@@ -1,0 +1,36 @@
+name: Runner file
+
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      env:
+        description: environment
+        type: choice
+        required: true
+        options: 
+        - local
+        - prod
+      tags:
+        description: Tags
+        type: string
+        required: true
+      browser:
+        description: browser
+        type: choice
+        required: true
+        options: 
+        - chrome-remote
+        - firefox-remote
+
+jobs:
+
+  Manual_Parametrized:
+    uses: ./.github/workflows/common-workflow.yml
+    with:
+      tags: "${{ github.event.inputs.tags }}"
+      environment: "${{ github.event.inputs.env }}"
+      browser: "${{ github.event.inputs.browser }}"

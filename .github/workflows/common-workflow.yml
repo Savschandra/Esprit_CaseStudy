@@ -9,9 +9,29 @@ on:
   pull_request:
     branches: [ master ]
   
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      tags:
+        required: true
+        type: string
+      browser: 
+        required: true
+        type: string
+      slackChannelID:  
+        required: false
+        type: string
+        default: ''
+      invoker: 
+        required: false
+        type: string
+        default: ''
+  
 jobs:
-  build:
-    runs-on: cision-self-hosted
+  run-automated-tests:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3

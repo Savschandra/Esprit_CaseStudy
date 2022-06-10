@@ -8,28 +8,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
-      tags:
-        required: true
-        type: string
-      browser: 
-        required: true
-        type: string
-      slackChannelID:  
-        required: false
-        type: string
-        default: ''
-      invoker: 
-        required: false
-        type: string
-        default: ''
-
+  
 jobs:
-  run-automated-tests:
+  build:
     runs-on: cision-self-hosted
 
     steps:

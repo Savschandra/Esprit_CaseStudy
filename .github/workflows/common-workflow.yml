@@ -31,7 +31,7 @@ on:
   
 jobs:
   run-automated-tests:
-    runs-on: [self-hosted,linux,x64,insights]
+    runs-on: [cision-self-hosted]
 
     steps:
     - uses: actions/checkout@v3

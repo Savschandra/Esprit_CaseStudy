@@ -31,7 +31,7 @@ on:
   
 jobs:
   run-automated-tests:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,linux,x64,insights]
 
     steps:
     - uses: actions/checkout@v3

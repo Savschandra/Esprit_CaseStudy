@@ -6,6 +6,8 @@ name: Regression Automation Test 02
 on:
   push:
     branches: [master]
+  pull_request:
+    branches : [master]
   
   workflow_call:
     inputs:
@@ -29,7 +31,7 @@ on:
   
 jobs:
   run-automated-tests:
-    runs-on: cision-self-hosted
+    runs-on: self-hosted,linux,x64,insights
 
     steps:
     - uses: actions/checkout@v3

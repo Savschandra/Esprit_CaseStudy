@@ -40,6 +40,19 @@ jobs:
       with:
         java-version: '17'
         distribution: 'adopt'
+        
+    - name: Setup SSH Keys and known_hosts
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.G_KEY_WP }}"
+        
+    - name: Configure Git User
+      run: |
+        git config user.email "cidevops@prime-research.com"
+        git config user.name "cidevops"
+          
     - name: Install Chrome
       run: |
         sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -47,9 +60,9 @@ jobs:
         sudo apt update
         sudo apt install -y google-chrome-stable
         google-chrome --version
+        
     - name: Cache local Maven repository
     - uses: actions/cache@v3
-    - uses: actions/setup-node@v3
       with:
         path: ~.m2/repository
         key: ${{ runner.os }}-maven

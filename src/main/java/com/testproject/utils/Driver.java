@@ -47,11 +47,7 @@ public class Driver {
                     chromeOptions.addArguments("window-size=1920,1440");
                     chromeOptions.addArguments("--disable-dev-shm-usage");
                     chromeOptions.addArguments("--no-sandbox");
-//                    try {
-//                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), chromeOptions));
-//                    } catch (MalformedURLException e) {
-//                        e.printStackTrace();
-//                    }
+                    driverPool.set(new RemoteWebDriver(chromeOptions));
                     System.out.println("Running REMOTE Chrome");
                     break;
                 case "firefox":
@@ -67,11 +63,8 @@ public class Driver {
                     ffOptions.addArguments("headless");
                     ffOptions.setCapability("platform", "ANY");
                     ffOptions.addArguments("window-size=1920,1440");
-//                    try {
 //                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
-//                    } catch (MalformedURLException e) {
-//                        e.printStackTrace();
-//                    }
+                    driverPool.set(new RemoteWebDriver(ffOptions));
                     System.out.println("Running REMOTE Firefox");
                     break;
                 case "edge":

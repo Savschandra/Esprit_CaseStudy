@@ -56,7 +56,7 @@ jobs:
 #           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn verify
+      run: mvn --file pom.xml "-Djava.awt.headless=true"
       
     - name: report artifact - cucumber report  
       if: always()

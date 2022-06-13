@@ -9,29 +9,29 @@ on:
   pull_request:
     branches : [master]
   
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
-      tags:
-        required: true
-        type: string
-      browser: 
-        required: true
-        type: string
-      slackChannelID:  
-        required: false
-        type: string
-        default: ''
-      invoker: 
-        required: false
-        type: string
-        default: ''
+#   workflow_call:
+#     inputs:
+#       environment:
+#         required: true
+#         type: string
+#       tags:
+#         required: true
+#         type: string
+#       browser: 
+#         required: true
+#         type: string
+#       slackChannelID:  
+#         required: false
+#         type: string
+#         default: ''
+#       invoker: 
+#         required: false
+#         type: string
+#         default: ''
   
 jobs:
   run-automated-tests:
-    runs-on: self-hosted,linux,x64,insights
+    runs-on: [self-hosted,linux,x64,insights]
 
     steps:
     - uses: actions/checkout@v3

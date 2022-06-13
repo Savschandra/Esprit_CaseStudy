@@ -1,36 +1,34 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Regression Automation Test
+name: Regression Automation Test 02
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
-      tags:
-        required: true
-        type: string
-      browser: 
-        required: true
-        type: string
-      slackChannelID:  
-        required: false
-        type: string
-        default: ''
-      invoker: 
-        required: false
-        type: string
-        default: ''
+    branches : [master]
+  
+#   workflow_call:
+#     inputs:
+#       environment:
+#         required: true
+#         type: string
+#       tags:
+#         required: false
+#         type: string
+#       browser: 
+#         required: true
+#         type: string
+#       slackChannelID:  
+#         required: false
+#         type: string
+#         default: ''
+#       invoker: 
+#         required: false
+#         type: string
+#         default: ''
 
 jobs:
   run-automated-tests:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,linux,x64,insights]
 
     steps:
     - uses: actions/checkout@v3
@@ -40,17 +38,25 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'maven'
+        
+    - name: Install Chrome
+      run: |
+        sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google.list
+        sudo apt update
+        sudo apt install -y google-chrome-stable
+        google-chrome --version
+        
     - name: Cache local Maven repository
       uses: actions/cache@v3
       with:
-        path: ~.m2/repository
+        path: ~/.m2/repository
         key: ${{ runner.os }}-maven
         restore-keys: |
           ${{ runner.os }}-maven
           
     - name: Maven verify
-      run: mvn -B clean verify -Dcucumber.filter.tags="${{ inputs.tags }}" -Denvironment=${{ inputs.environment }} -DhorreumUrl=http://horreum.localhost/ -Dbrowser=${{ inputs.browser }}
+      run: mvn -B clean verify -Denvironment=${{ inputs.environment }} -Dbrowser=${{ inputs.browser }}
       
     - name: report artifact - cucumber report  
       if: always()

@@ -47,13 +47,13 @@ jobs:
         sudo apt update
         sudo apt install -y google-chrome-stable
         google-chrome --version
-#     - name: Cache local Maven repository
-#       uses: actions/cache@v2
-#       with:
-#         path: ~.m2/repository
-#         key: ${{ runner.os }}-maven
-#         restore-keys: |
-#           ${{ runner.os }}-maven
+    - name: Cache local Maven repository
+      uses: actions/cache@v2
+      with:
+        path: ~.m2/repository
+        key: ${{ runner.os }}-maven
+        restore-keys: |
+          ${{ runner.os }}-maven
           
     - name: Maven verify
       run: mvn clean verify "-Djava.awt.headless=true"

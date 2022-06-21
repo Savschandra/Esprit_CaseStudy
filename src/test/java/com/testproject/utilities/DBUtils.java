@@ -11,6 +11,8 @@ import java.util.Map;
 
 public class DBUtils {
 
+    /**************  This class contains Database methods ****************/
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;

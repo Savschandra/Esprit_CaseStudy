@@ -1,7 +1,6 @@
 package com.testproject.base;
 
 import com.testproject.utils.Driver;
-import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.Augmenter;
@@ -10,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.net.ssl.SSLPeerUnverifiedException;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;

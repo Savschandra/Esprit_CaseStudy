@@ -1,0 +1,1 @@
+file:src/test/resources/features/StroerTest.feature:9:17:25:35:49:61:71:81

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class BrowserUtils {
 
-
+/**************  This class contains generic methods to be used in actual scripts ****************/
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(element).perform();

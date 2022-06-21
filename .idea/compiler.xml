@@ -8,12 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PegasusFrameWork" />
-        <module name="PegasusFrameWorkTest" />
+        <module name="Stroer_CaseStudy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="PegasusFrameWork" target="17" />
-      <module name="PegasusFrameWorkTest" target="17" />
+      <module name="Stroer_CaseStudy" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

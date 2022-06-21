@@ -11,9 +11,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 
 public class Driver {
 
@@ -28,7 +25,6 @@ public class Driver {
      */
 
     public static WebDriver get() {
-//        String horreumUrl = ConfigurationReader.getProperty("horreumUrl");
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
         if (driverPool.get() == null) {
             switch (browser) {
@@ -63,7 +59,6 @@ public class Driver {
                     ffOptions.addArguments("headless");
                     ffOptions.setCapability("platform", "ANY");
                     ffOptions.addArguments("window-size=1920,1440");
-//                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
                     driverPool.set(new RemoteWebDriver(ffOptions));
                     System.out.println("Running REMOTE Firefox");
                     break;

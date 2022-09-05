@@ -7,6 +7,8 @@ import java.util.Properties;
 public class Environment {
 
     public static final String URL;
+    public static final String USERNAME;
+    public static final String PASSWORD;
     public static final String DB_USERNAME;
     public static final String DB_PASSWORD;
     public static final String DB_URL;
@@ -27,6 +29,8 @@ public class Environment {
 
         assert properties != null;
         URL = properties.getProperty("url");
+        USERNAME = properties.getProperty("user");
+        PASSWORD = properties.getProperty("password");
         DB_URL = properties.getProperty("db_url");
         DB_USERNAME = properties.getProperty("db_username");
         DB_PASSWORD = properties.getProperty("db_password");

@@ -11,10 +11,10 @@
 		<protocol>https</protocol>
 
 		<!-- title of the document -->
-		<documentTitle>Stroer QA - Cucumber Framework</documentTitle>
+		<documentTitle>Esprit QA - Cucumber Framework</documentTitle>
 
 		<!-- report name - displayed at top-nav -->
-		<reportName>Stroer - Cucumber Spark Report</reportName>
+		<reportName>Esprit - Cucumber Spark Report</reportName>
 
 		<!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
 		<dateFormat>yyyy-MM-dd</dateFormat>

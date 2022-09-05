@@ -1,6 +1,6 @@
-STROER CASE STUDY --
+ESPRIT CASE STUDY --
 
-Stroer Case Study is based on BDD Automation Framework with the below tools & technologies.
+Esprit Case Study is based on BDD Automation Framework with the below tools & technologies.
 
 Framework	            --  BDD Hybrid (Cucumber with Gherkin Language & Page Factory Model)
 Tools	                --  Selenium WebDriver & Maven

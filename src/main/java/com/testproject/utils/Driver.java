@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.net.MalformedURLException;
+
 
 public class Driver {
 
@@ -25,57 +27,58 @@ public class Driver {
      */
 
     public static WebDriver get() {
+//        String horreumUrl = ConfigurationReader.getProperty("horreumUrl");
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.getProperty("browser");
         if (driverPool.get() == null) {
             switch (browser) {
-                case "chrome":
+                case "chrome" -> {
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
-                    break;
-                case "chrome-headless":
+                }
+                case "chrome-headless" -> {
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver(new ChromeOptions().addArguments("headless").addArguments("window-size=1920,1440")));
-                    break;
-                case "chrome-remote":
+                }
+                case "chrome-remote" -> {
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--headless");
-                    chromeOptions.addArguments("--no-sandbox");
-                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("headless");
                     chromeOptions.setCapability("platform", "ANY");
                     chromeOptions.addArguments("window-size=1920,1440");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--no-sandbox");
                     driverPool.set(new RemoteWebDriver(chromeOptions));
                     System.out.println("Running REMOTE Chrome");
-                    break;
-                case "firefox":
+                }
+                case "firefox" -> {
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
-                    break;
-                case "firefox-headless":
+                }
+                case "firefox-headless" -> {
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true).addArguments("-width=1920").addArguments("-height=1080")));
-                    break;
-                case "firefox-remote":
+                }
+                case "firefox-remote" -> {
                     FirefoxOptions ffOptions = new FirefoxOptions();
                     ffOptions.addArguments("headless");
                     ffOptions.setCapability("platform", "ANY");
                     ffOptions.addArguments("window-size=1920,1440");
+//                        driverPool.set(new RemoteWebDriver(new URL(horreumUrl), ffOptions));
                     driverPool.set(new RemoteWebDriver(ffOptions));
                     System.out.println("Running REMOTE Firefox");
-                    break;
-                case "edge":
+                }
+                case "edge" -> {
                     WebDriverManager.edgedriver().setup();
                     driverPool.set(new EdgeDriver());
-                    break;
-                case "edge-headless":
+                }
+                case "edge-headless" -> {
                     WebDriverManager.edgedriver().setup();
                     driverPool.set(new EdgeDriver(new EdgeOptions().addArguments("headless").addArguments("window-size=1920,1440")));
-                    break;
-                case "safari":
+                }
+                case "safari" -> {
                     WebDriverManager.safaridriver().setup();
                     driverPool.set(new SafariDriver());
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + browser);
+                }
+                default -> throw new IllegalStateException("Unexpected value: " + browser);
             }
         }
         return driverPool.get();

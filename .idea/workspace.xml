@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c654d4d-1b42-44bd-8e0f-2347299fb2f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 5-Sep-22 16-44-11/target/PdfReport/Espritpdf.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 5-Sep-22 16-44-11/target/SparkReport/EspritSpark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 5-Sep-22 16-44-11/target/SparkReport/Spark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 5-Sep-22 16-44-11/target/htmlReport/EspritHtml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/PdfReport/Espritpdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/SparkReport/EspritSpark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/SparkReport/Spark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/htmlReport/EspritHtml.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/testproject/utils/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/testproject/utils/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritElements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritElements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/stepDefs/EspritStepDef.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/testproject/stepDefs/EspritStepDef.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ravi-muktavarapu/Desktop/Project_backup/EspritCaseStudy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ravi-muktavarapu/Desktop/testprj/EspritCaseStudy&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -255,7 +250,15 @@
       <workItem from="1662146668917" duration="869000" />
       <workItem from="1662147549740" duration="951000" />
       <workItem from="1662148510790" duration="8713000" />
-      <workItem from="1662387132883" duration="2113000" />
+      <workItem from="1662387132883" duration="2230000" />
+      <workItem from="1662390548245" duration="2183000" />
+      <workItem from="1662453104462" duration="2064000" />
+      <workItem from="1662460371970" duration="1900000" />
+      <workItem from="1662502824306" duration="43000" />
+      <workItem from="1662552314238" duration="288000" />
+      <workItem from="1662552619330" duration="21000" />
+      <workItem from="1662553333990" duration="32000" />
+      <workItem from="1662553372910" duration="323000" />
     </task>
     <servers />
   </component>

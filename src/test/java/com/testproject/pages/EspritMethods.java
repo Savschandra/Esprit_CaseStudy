@@ -1,97 +1,24 @@
 package com.testproject.pages;
 
-import com.testproject.cucumber.ScenarioContext;
-import com.testproject.utilities.DBUtils;
+import com.testproject.base.BasePage;
 import com.testproject.utils.Driver;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
+import io.cucumber.java.an.E;
+import org.jsoup.Connection;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class EspritMethods {
 
+    private final EspritElements EspritPage;
 
-    public static String CaseID;
-    public static String username;
-    public static String password;
-    public static String userEmail;
-
-    public static ArrayList<Map<String, String>> excelRows= null;
-    public static Map<String, String> data = null;
-    public static String tcName=null;
-    public static int rowVal;
-    public static int cellVal;
-    public static String val=null;
-    public static int dataIndex = 0;
-    File file = null;
-
-    //private final EspritElements test123;
-    private final ScenarioContext context;
     public static final Logger LOG = LoggerFactory.getLogger(EspritMethods.class.getName());
 
-    public EspritMethods(ScenarioContext context) {
-        this.context = context;
+    public EspritMethods(EspritElements espritPage) {
+        this.EspritPage = espritPage;
     }
 
-    /******************* Methods to read Excel sheet and store data in Hashmaps ***************/
-    public static void getTestData(String testName) throws IOException {
-
-        try {
-            tcName = testName;
-            excelRows = new ArrayList<Map<String, String>>();
-            if (dataIndex == -1) {
-                return;
-            }
-            String dir = System.getProperty("user.dir") + "\\TestData\\TestCasesNew.xls";
-            System.out.println("This is the path of the test data file : "+dir);
-            Workbook wb = Workbook.getWorkbook((new File(dir)));
-            jxl.Sheet dataSheet = wb.getSheet("Test Data");
-            data = new HashMap<String, String>();
-            System.out.println(testName);
-            dataIndex = dataSheet.findCell(testName).getRow();
-            for (int i = 0; i < dataSheet.getColumns(); i++) {
-                String key = dataSheet.getCell(i, 0).getContents();
-                String value = dataSheet.getCell(i, dataIndex).getContents();
-                data.put(key, value);
-            }
-            excelRows.add(data);
-            System.out.println(data);
-            System.out.println("getTestData method completed...");
-        } catch (IOException | BiffException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static String storeData(String key) {
-        return data.get(key);
-    }
-
-    /*..... This Method will read test data from provided excel sheet .....*/
-    public void getSheetData(String testName){
-        try {
-            getTestData(testName);
-            CaseID= EspritMethods.storeData("Case_ID");
-            username = EspritMethods.storeData("Username");
-            password = EspritMethods.storeData("Password");
-            userEmail = EspritMethods.storeData("User Email");
-        } catch (IOException e) {
-            LOG.info("Error occured while reading the test data from excel sheet");
-        }
-    }
 
     public void assertThat(WebElement elem , String expectedText){
         try{
@@ -122,74 +49,68 @@ public class EspritMethods {
             LOG.error("Assert Failed " );
         }
     }
-public boolean checkXMLfile(){
-    boolean fileResults = false;
-    String attValue =null;
-    try {
-        file = new File("Filepath + order.xml");
-        fileResults =true;
-        LOG.info("XML file is created");
-    }catch (Exception e){
-        e.printStackTrace();
+
+    /*********** This method is to select the required category according to user's input **********************/
+    public void choseProductCat(String category){
+        if(category.equalsIgnoreCase("dress")){
+            EspritPage.WomenDresses.click();
+        }else if(category.equalsIgnoreCase("tshirt")){
+            EspritPage.WomenTshirt.click();
+        }else if(category.equalsIgnoreCase("jumper")){
+            EspritPage.WomenJumper.click();
+        }else{
+            LOG.info("Different category is selected which is not available right now on selection page ");
+        }
     }
-    return fileResults;
-}
-    public String readXml(String attribute){
-        String attValue = null;
-        if(checkXMLfile()==true) {
-            try {
-                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-                DocumentBuilder db = dbf.newDocumentBuilder();
-                Document doc = db.parse(file);
-                doc.getDocumentElement().normalize();
-                String rootElem = doc.getDocumentElement().getNodeName();
-                NodeList tagList = doc.getElementsByTagName("oderId");
-                for (int temp = 0; temp < tagList.getLength(); temp++) {
 
-                    Node node = tagList.item(temp);
+    /************ This method is to update the filters **************/
+    public void choseCategoryFilters() {
+        EspritPage.waitForPageToLoad();
+        EspritPage.FilterButton.click();
+        EspritPage.SizeunderFilters.click();
+        BasePage.sleep(2000);
+        EspritPage.SizeSelectionUnderFilters.click();
+        EspritPage.ColorUnderFilters.click();
+        BasePage.sleep(5000);
+        EspritPage.ResultsUnderFilters.click();
+    }
 
-                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+    /*********** This method id to add dress to the cart **************/
+        public void addDressToCart() {
+            //BasePage.scrollToElement(EspritPage.SelectDress);
+            EspritPage.SelectConfirmDress.click();
+            EspritPage.waitForPageToLoad();
+            //EspritPage.SelectDressColor.click();
+            BasePage.waitForVisibility(EspritPage.SelectDressSize, 5);
+            EspritPage.SelectDressSize.click();
+            BasePage.waitToBeClickable(EspritPage.AddDressToBag, 5);
+            EspritPage.AddDressToBag.click();
+        }
 
-                        Element element = (Element) node;
+    /************ This method is to add Credit Card Details ***********/
+        public void addCreditCardInfo() {
+            EspritPage.switchToFrame("paymentIFrame");
+            BasePage.waitForVisibility(EspritPage.CreditCardNumber,5);
+            EspritPage.CreditCardNumber.sendKeys("37178214585854222");
+            EspritPage.CreditCardHolder.sendKeys("Esprit");
+            EspritPage.CreditCardExpiry.sendKeys("0125");
+            EspritPage.CreditCardCVV.sendKeys("000");
+            EspritPage.ProductBuyNow.click();
+            EspritPage.switchToParentFrame();
+        }
 
-                        // get attribute
-                        attValue = element.getAttribute(attribute);
-                    }
+    /************ This method is for asserting whether the payment is successful or not **************/
+        public void checkPayment() {
+                BasePage.sleep(5000);
+                EspritPage.Errormessage.click();
+                String CheckoutMsg = EspritPage.PaymentFailed.getText();
+                System.out.println(CheckoutMsg);
+                if(CheckoutMsg.contains("Payment Successful")) {
+                    LOG.info("Payment is Successful");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+                else {
+                    LOG.error("Payment is not successful");
+                }
             }
-
-        }
-        return attValue;
-    }
-
-    public boolean checkTableStatus(){
-        boolean status = false;
-        try {
-            String query = "SELECT * FROM Order Data";
-            DBUtils.createConnection();
-            DBUtils.getQueryResultList(query);
-            status = true ;
-            DBUtils.destroyConnection();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return status;
-    }
-
-    public void readOrderTable(String tablename){
-        try{
-            String query = "SELECT * FROM " + tablename;
-            DBUtils.createConnection();
-            LOG.info("Table is created and following are the details stored in table : " + DBUtils.getQueryResultList(query));
-            DBUtils.destroyConnection();
-        }catch (Exception e){
-e.printStackTrace();
-        }
-    }
-
-
-    /********************Methods for EspritCase study*******************/
 
 }

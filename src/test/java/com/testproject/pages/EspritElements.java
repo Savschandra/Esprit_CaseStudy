@@ -30,25 +30,54 @@ public class EspritElements extends BasePage<EspritElements> {
     @FindBy(xpath = "//img[@class='logo-home-img']")
     public WebElement EspritLogo;
 
-    @FindBy(xpath = "//img[@alt='SFCC_Square_W']")
+    @FindBy(xpath = "//a[@href='/womenswear']")
     public WebElement WomenSelection;
 
+    @FindBy(xpath = "//div[@id='a630494']")
+    public WebElement WomenDresses;
+
+    @FindBy(xpath = "//div[@id='a630482']")
+    public WebElement WomenTshirt;
+
+    @FindBy(xpath = "//div[@id='a630726']")
+    public WebElement WomenJumper;
+
+
+    //a[@href='/womenswear/clothes/jumpers-cardigans']
 
     /******************** Filters Option Elements *************/
-    @FindBy(xpath = "//span[contains(text(),'Filters')]")
+    @FindBy(xpath = "(//span[contains(text(),'Filters')])[1]")
     public WebElement FilterButton;
 
     @FindBy(xpath = "//button[@aria-controls='refinement-size']")
     public WebElement SizeunderFilters;
 
-    @FindBy(xpath = "//span[contains(text(),' XS')]")
+    @FindBy(xpath = "(//button[@class='btn-refinement full  '])[2]")
     public WebElement SizeSelectionUnderFilters;
 
-    @FindBy(xpath = "//button[@title='BLACK']")
+    @FindBy(xpath = "//button[@class='swatch-square-BLACK  color-attribute color-attribute-btn']")
     public WebElement ColorUnderFilters;
 
     @FindBy(xpath = "//button[@class='close-refinebar btn btn-block btn-primary']")
     public WebElement ResultsUnderFilters;
+
+    @FindBy(xpath = "//img[@src='https://www.esprit.co.uk/dw/image/v2/BDSS_PRD/on/demandware.static/-/Sites-esprit-master/default/dw5a15f0f3/images/20/992/992CC1E305_001_20.jpg?sfrm=jpg&sw=700&sh=1050&sm=fit']")
+    public WebElement SelectDress;
+
+    @FindBy(xpath = "(//div[@class='product-image'])[1]")
+    public WebElement SelectConfirmDress;
+
+    @FindBy(xpath = "//button[@aria-label='Select color BLACK']")
+    public WebElement SelectDressColor;
+
+    @FindBy(xpath = "(//button[@aria-label='Select size XS'])[1]")
+    public WebElement SelectDressSize;
+
+    @FindBy(xpath = "(//button[@data-cta='addToCart'])[1]")
+    public WebElement AddDressToBag;
+
+    @FindBy(xpath = "//a[contains(text(), 'View shopping bag')]")
+    public WebElement ViewShoppingBag;
 
 
     /******************** Checkout Page ***********************/
@@ -63,10 +92,10 @@ public class EspritElements extends BasePage<EspritElements> {
     @FindBy(xpath = "//button[contains(text(),'Continue to payment')]")
     public WebElement PaymentButton;
 
-    @FindBy(xpath = "(//div[@class='esp-payment-card'])[1]")
+    @FindBy(xpath = "//span[contains(text(),'Credit Card')]")
     public WebElement PaymentOptions;
 
-    @FindBy(xpath = "//button[contains(text(),'Buy now')]")
+    @FindBy(xpath = "//button[@value='place-order']")
     public WebElement BuyNowButton;
 
     @FindBy(xpath = "//input[@id='cardNumber']")
@@ -86,5 +115,14 @@ public class EspritElements extends BasePage<EspritElements> {
 
     @FindBy(xpath = "//input[@id='btn-submit']")
     public WebElement ProductBuyNow;
+
+    @FindBy(xpath = "//div[contains(text(),'Payment is success')]")
+    public WebElement PaymentSuccess;
+
+    @FindBy(xpath = "//div[contains(text(),'Unfortunately the payment with your')]")
+    public WebElement PaymentFailed;
+
+    @FindBy(xpath = "(//h2[contains(text(),'Your payment options')])[2]")
+    public WebElement Errormessage;
 
 }

@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         glue = "com/testproject/stepDefs", //the path of the step definition files
         monochrome = true, //display the console output in a proper readable format
         dryRun = false, //to check the mapping is proper between feature file and stepdef file
-        publish = true
-        //tags = "@Requirement1 or @Requirement2 or @Requirement3 or @Requirement4"
+        publish = true, //publishes a cucumber report
+        tags = "@Regression or @Sprint" //QA can execute the test cases tagged
 )
 
 public class EspritRunnerTest {

@@ -52,16 +52,50 @@ public class EspritStepDef {
     @Then("User clicks on Submit button")
     public void user_clicks_on_submit_button() {
         EspritPage.LoginButton.click();
+        BasePage.sleep(3000);
     }
 
-    /*Test01 >> verify user is able login to webShop*/
-    @Given("User clicks on Logo")
-    public void user_clicks_on_logo() {
-        EspritPage.EspritLogo.click();
-    }
+    /************************* Test01 >> User should login and add dress to cart *******************************/
     @Then("User navigates to Women collection")
     public void user_navigates_to_women_collection() {
+        EspritPage.EspritLogo.click();
         EspritPage.WomenSelection.click();
     }
 
+    @Then("User selects a {string} category")
+    public void user_selects_a_category(String category) {
+        AllMethods.choseProductCat(category);
+    }
+
+    @Then("User Adds a dress to cart")
+    public void user_adds_a_dress_to_cart() {
+        AllMethods.addDressToCart();
+    }
+
+
+
+    /*************************Test02 >> User should navigate to cart and perform checkout flow*******************************/
+    @Then("User navigates to cart and selects checkout")
+    public void user_navigates_to_cart_and_selects_checkout() {
+        EspritPage.CartIcon.click();
+        EspritPage.CheckoutButton.click();
+    }
+    @When("User click on Continue to Payment")
+    public void user_click_on_continue_to_payment() {
+        EspritPage.PaymentButton.click();
+    }
+    @Then("User should click on Credit Card and click on Buy now")
+    public void user_should_click_on_credit_card_and_click_on_buy_now() {
+        EspritPage.PaymentOptions.click();
+        BasePage.sleep(3000);
+        EspritPage.BuyNowButton.click();
+    }
+    @When("User enters valid credit card data and performs Buy now")
+    public void user_enters_valid_credit_card_data_and_performs_buy_now() {
+        AllMethods.addCreditCardInfo();
+    }
+    @Then("User should observe a order placed successfully")
+    public void user_should_observe_a_order_placed_successfully() {
+        AllMethods.checkPayment();
+    }
 }

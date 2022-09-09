@@ -81,8 +81,9 @@ public class EspritMethods {
             EspritPage.SelectConfirmDress.click();
             EspritPage.waitForPageToLoad();
             //EspritPage.SelectDressColor.click();
-            BasePage.waitForVisibility(EspritPage.SelectDressSize, 5);
-            EspritPage.SelectDressSize.click();
+            BasePage.waitForVisibility(EspritPage.DressSizes, 5);
+            sizeSelection();
+            //EspritPage.SelectDressSize01.click();
             BasePage.waitToBeClickable(EspritPage.AddDressToBag, 5);
             EspritPage.AddDressToBag.click();
         }
@@ -112,5 +113,16 @@ public class EspritMethods {
                     LOG.error("Payment is not successful");
                 }
             }
+
+    /************ This method is for asserting whether the payment is successful or not **************/
+        public void sizeSelection() {
+            try {
+                if(EspritPage.SelectDressSize01.isDisplayed()) {
+                    EspritPage.SelectDressSize01.click();
+                }
+            } catch (Exception e) {
+                    EspritPage.SelectDressSize.click();
+            }
+        }
 
 }

@@ -70,8 +70,14 @@ public class EspritElements extends BasePage<EspritElements> {
     @FindBy(xpath = "//button[@aria-label='Select color BLACK']")
     public WebElement SelectDressColor;
 
+    @FindBy(xpath = "//ul[@class='size-selection online-sizes oncan-size-selection']")
+    public WebElement DressSizes;
+
     @FindBy(xpath = "(//button[@aria-label='Select size XS'])[1]")
     public WebElement SelectDressSize;
+
+    @FindBy(xpath = "(//button[@aria-label='Select size 6'])[1]")
+    public WebElement SelectDressSize01;
 
     @FindBy(xpath = "(//button[@data-cta='addToCart'])[1]")
     public WebElement AddDressToBag;

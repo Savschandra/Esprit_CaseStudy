@@ -5,43 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c654d4d-1b42-44bd-8e0f-2347299fb2f4" name="Changes" comment="Trying to push">
-      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 8-Sep-22 17-27-55/target/PdfReport/Espritpdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-11-45/target/PdfReport/Espritpdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-11-45/target/SparkReport/EspritSpark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-11-45/target/SparkReport/Spark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-11-45/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-11-45/target/htmlReport/EspritHtml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-20-29/target/PdfReport/Espritpdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-20-29/target/SparkReport/EspritSpark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-20-29/target/SparkReport/Spark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-20-29/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-20-29/target/htmlReport/EspritHtml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-28-01/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-30-15/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-31-41/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-35-31/target/embedded1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 9-Sep-22 13-36-44/target/embedded1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/PdfReport/Espritpdf.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/SparkReport/EspritSpark.html" beforeDir="false" afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 8-Sep-22 17-27-55/target/SparkReport/EspritSpark.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/SparkReport/Spark.html" beforeDir="false" afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 8-Sep-22 17-27-55/target/SparkReport/Spark.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 7-Sep-22 14-22-21/target/htmlReport/EspritHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/EspritReports/EspritRegressionResults 8-Sep-22 17-27-55/target/htmlReport/EspritHtml.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestData/TestCasesNew.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/testproject/pages/EspritElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testproject/pages/EspritElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/testproject/pages/EspritMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testproject/pages/EspritMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/testproject/runners/EspritRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testproject/runners/EspritRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/testproject/stepDefs/EspritStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testproject/stepDefs/EspritStepDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/EspritTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/EspritTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/base/BasePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/base/Page.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/utils/ConfigurationReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/utils/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/utils/Environment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/testproject/utils/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rerun.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Environments/test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/cucumber/ScenarioContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritElements.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/runners/EspritRunnerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/stepDefs/EspritStepDef.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/stepDefs/Hooks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/utilities/BrowserUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/utilities/DBUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cucumber.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/extent-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/extent.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/EspritTest.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritElements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritElements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/testproject/pages/EspritMethods.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +281,7 @@
       <workItem from="1662625498847" duration="787000" />
       <workItem from="1662626511090" duration="80000" />
       <workItem from="1662626604332" duration="16643000" />
-      <workItem from="1662650001522" duration="1075000" />
+      <workItem from="1662650001522" duration="3462000" />
     </task>
     <task id="LOCAL-00001" summary="Trying to push">
       <created>1662553969491</created>
@@ -326,5 +311,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Trying to push" />
     <option name="LAST_COMMIT_MESSAGE" value="Trying to push" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/testproject/stepDefs/EspritStepDef.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

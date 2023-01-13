@@ -20,7 +20,7 @@ jobs:
     
     
       
-    - name: Install Chrome Browser Test 
+    - name: Install Chrome Browser Test Perform
       run: |
         sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
         sudo echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google.list
